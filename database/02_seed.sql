@@ -1,18 +1,18 @@
 INSERT INTO SUBDIRECCION (NOMBRE, DESCRIPCION) VALUES
-('Subdirección Administrativa', 'Área encargada de administración y recursos humanos'),
-('Subdirección Tecnología', 'Área de sistemas y desarrollo tecnológico'),
-('Subdirección Financiera', 'Área financiera y contable');
+('Subdireccion Administrativa', 'Area encargada de administracion y recursos humanos'),
+('Subdireccion Tecnologia', 'Area de sistemas y desarrollo tecnologico'),
+('Subdireccion Financiera', 'Area financiera y contable');
 
 INSERT INTO PUESTO (NOMBRE, DESCRIPCION, NIVEL) VALUES
-('Director General', 'Responsable de dirección institucional', 'Ejecutivo'),
-('Gerente Administrativo', 'Gestión administrativa', 'Gerencial'),
+('Director General', 'Responsable de direccion institucional', 'Ejecutivo'),
+('Gerente Administrativo', 'Gestion administrativa', 'Gerencial'),
 ('Analista Programador', 'Desarrollo de sistemas', 'Profesional'),
-('Administrador de Base de Datos', 'Gestión de bases de datos', 'Profesional'),
+('Administrador de Base de Datos', 'Gestion de bases de datos', 'Profesional'),
 ('Contador', 'Procesos contables', 'Profesional'),
-('Analista Recursos Humanos', 'Gestión del talento humano', 'Profesional'),
+('Analista Recursos Humanos', 'Gestion del talento humano', 'Profesional'),
 ('Secretaria', 'Apoyo administrativo', 'Operativo'),
-('Técnico Soporte', 'Soporte tecnológico', 'Técnico'),
-('Supervisor', 'Supervisión operativa', 'Técnico'),
+('Tecnico Soporte', 'Soporte tecnologico', 'Tecnico'),
+('Supervisor', 'Supervision operativa', 'Tecnico'),
 ('Auxiliar Administrativo', 'Apoyo general', 'Operativo');
 
 INSERT INTO TIPO_CONTRATO (NOMBRE, DESCRIPCION) VALUES
@@ -62,19 +62,19 @@ VALUES
 INSERT INTO DEPARTAMENTO
 (ID_SUBDIRECCION, NOMBRE, DESCRIPCION, ID_JEFE)
 VALUES
-(1,'Recursos Humanos','Gestión del personal y contratos',2),
-(1,'Administración','Procesos administrativos internos',6),
-(2,'Tecnologías de Información','Desarrollo y soporte tecnológico',3),
+(1,'Recursos Humanos','Gestion del personal y contratos',2),
+(1,'Administracion','Procesos administrativos internos',6),
+(2,'Tecnologias de Informacion','Desarrollo y soporte tecnologico',3),
 (3,'Finanzas','Control financiero y contable',5),
 (1,'Compras','Adquisiciones institucionales',12);
 
 INSERT INTO UNIDAD_FUNCIONAL
 (ID_DEPARTAMENTO,NOMBRE,DESCRIPCION)
 VALUES
-(1,'Gestión Humana','Procesos relacionados al personal'),
-(1,'Reclutamiento','Selección y contratación'),
-(2,'Servicios Administrativos','Administración general'),
-(3,'Desarrollo de Software','Creación de sistemas'),
+(1,'Gestion Humana','Procesos relacionados al personal'),
+(1,'Reclutamiento','Seleccion y contratacion'),
+(2,'Servicios Administrativos','Administracion general'),
+(3,'Desarrollo de Software','Creacion de sistemas'),
 (3,'Infraestructura','Servidores y soporte'),
 (4,'Contabilidad','Registro financiero'),
 (5,'Adquisiciones','Compras institucionales');
@@ -82,15 +82,15 @@ VALUES
 INSERT INTO UNIDAD_OPERATIVA
 (ID_UNIDAD_FUNCIONAL,NOMBRE,DESCRIPCION)
 VALUES
-(1,'Nómina','Administración de pagos'),
-(1,'Capacitación','Formación del personal'),
+(1,'Nomina','Administracion de pagos'),
+(1,'Capacitacion','Formacion del personal'),
 (2,'Contrataciones','Procesos de ingreso'),
 (3,'Archivo','Control documental'),
 (4,'Desarrollo Web','Aplicaciones internas'),
-(4,'Bases de Datos','Administración de información'),
-(5,'Mesa de Ayuda','Soporte técnico'),
+(4,'Bases de Datos','Administracion de informacion'),
+(5,'Mesa de Ayuda','Soporte tecnico'),
 (6,'Contabilidad General','Registro contable'),
-(7,'Compras Generales','Gestión de proveedores');
+(7,'Compras Generales','Gestion de proveedores');
 
 INSERT INTO CONTRATO
 (ID_EMPLEADO,ID_TIPO_CONTRATO,NUMERO_CONTRATO,FECHA_INICIO,FECHA_FIN,OBSERVACIONES)
@@ -142,7 +142,7 @@ VALUES
 (2,6,'2023-01-01',NULL,'Cambio de puesto'),
 
 (3,8,'2019-05-20','2020-12-31','Ingreso inicial'),
-(3,3,'2021-01-01',NULL,'Promoción desarrollo'),
+(3,3,'2021-01-01',NULL,'Promocion desarrollo'),
 
 (4,10,'2022-01-05',NULL,'Ingreso inicial'),
 
@@ -213,7 +213,7 @@ VALUES
 (1,1,'2020-01-10',NULL,'Ingreso RRHH'),
 
 (2,2,'2021-02-15','2022-12-31','Reclutamiento'),
-(2,1,'2023-01-01',NULL,'Cambio de área'),
+(2,1,'2023-01-01',NULL,'Cambio de area'),
 
 (3,5,'2019-05-20','2020-12-31','Soporte inicial'),
 (3,6,'2021-01-01',NULL,'Desarrollo sistemas'),
@@ -224,17 +224,15 @@ VALUES
 
 (6,7,'2018-04-10',NULL,'Mesa de ayuda'),
 
-(7,2,'2021-08-01',NULL,'Capacitación'),
+(7,2,'2021-08-01',NULL,'Capacitacion'),
 
 (8,7,'2019-09-15',NULL,'Soporte'),
 
-(9,5,'2023-01-10',NULL,'Desarrollo web'),
-
 (10,6,'2022-03-20',NULL,'Base de datos'),
 
-(11,1,'2020-07-15',NULL,'Gestión humana'),
+(11,1,'2020-07-15',NULL,'Gestion humana'),
 
-(12,3,'2017-05-12',NULL,'Administración'),
+(12,3,'2017-05-12',NULL,'Administracion'),
 
 (13,4,'2023-02-01',NULL,'Archivo'),
 
@@ -248,14 +246,14 @@ VALUES
 
 (18,7,'2019-12-01',NULL,'Soporte'),
 
-(19,2,'2023-03-01',NULL,'Capacitación'),
+(19,2,'2023-03-01',NULL,'Capacitacion'),
 
 (20,8,'2018-01-15',NULL,'Contabilidad'),
 
 (21,5,'2020-02-20','2022-06-30','Desarrollo web'),
 (21,6,'2022-07-01',NULL,'Bases de datos'),
 
-(22,3,'2022-09-09',NULL,'Administración'),
+(22,3,'2022-09-09',NULL,'Administracion'),
 
 (23,5,'2019-03-03',NULL,'Desarrollo'),
 
@@ -263,7 +261,7 @@ VALUES
 
 (25,7,'2021-05-05',NULL,'Soporte'),
 
-(26,2,'2022-07-07',NULL,'Capacitación'),
+(26,2,'2022-07-07',NULL,'Capacitacion'),
 
 (27,7,'2019-01-01',NULL,'Soporte'),
 
@@ -271,7 +269,7 @@ VALUES
 
 (29,5,'2020-09-09',NULL,'Desarrollo'),
 
-(30,2,'2024-01-01',NULL,'Capacitación');
+(30,2,'2024-01-01',NULL,'Capacitacion');
 
 INSERT INTO HISTORIAL_SALARIOS
 (ID_EMPLEADO,SALARIO,FECHA_INICIO,FECHA_FIN,MOTIVO)
@@ -283,7 +281,7 @@ VALUES
 (2,5500,'2024-01-01',NULL,'Ajuste salarial'),
 
 (3,5000,'2019-05-20','2021-12-31','Ingreso'),
-(3,8000,'2022-01-01',NULL,'Promoción'),
+(3,8000,'2022-01-01',NULL,'Promocion'),
 
 (4,3500,'2022-01-05',NULL,'Ingreso'),
 
