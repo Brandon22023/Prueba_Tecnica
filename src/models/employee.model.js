@@ -50,6 +50,7 @@ function validateCommon(data) {
 
 export function validateCreateEmployee(data) {
   validateCommon(data);
+  validateDateOrder(data);
   return normalizeEmployee(data);
 }
 
@@ -69,6 +70,25 @@ export function validateUpdateEmployee(data) {
   }
 
   return normalizeEmployee(data);
+}
+
+export function validateEmployeeDates(data) {
+  validateDateOrder(data);
+}
+
+function validateDateOrder(data) {
+  if (
+    data.fechaNacimiento &&
+    data.fechaIngreso &&
+    isValidDate(data.fechaNacimiento) &&
+    isValidDate(data.fechaIngreso) &&
+    data.fechaNacimiento >= data.fechaIngreso
+  ) {
+    throw new ValidationError(
+      'Fechas de empleado inválidas',
+      ['fechaNacimiento debe ser anterior a fechaIngreso']
+    );
+  }
 }
 
 function normalizeEmployee(data) {

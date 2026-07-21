@@ -1,6 +1,7 @@
 import {
   listEmployees,
   getEmployee,
+  getEmployeeAudit,
   createEmployee,
   updateEmployee,
   deactivateEmployee
@@ -21,7 +22,34 @@ function auditUser(request) {
 }
 
 export async function list(request, response) {
-  response.json(await listEmployees());
+  const { query } = request;
+  const page = Number(query.page ?? 1);
+  const limit = Number(query.limit ?? 10);
+
+  if (!Number.isInteger(page) || page < 1 || !Number.isInteger(limit) || limit < 1 || limit > 100) {
+    return response.status(400).json({ message: 'page debe ser >= 1 y limit debe estar entre 1 y 100' });
+  }
+
+  let activo;
+  if (query.activo !== undefined) {
+    if (!['true', 'false'].includes(String(query.activo).toLowerCase())) {
+      return response.status(400).json({ message: 'activo debe ser true o false' });
+    }
+    activo = String(query.activo).toLowerCase() === 'true';
+  }
+
+  return response.json(await listEmployees({
+    apellido: query.apellido?.trim(),
+    activo,
+    page,
+    limit
+  }));
+}
+
+export async function auditById(request, response) {
+  const audit = await getEmployeeAudit(parseId(request.params.id));
+  if (!audit) return response.status(404).json({ message: 'Empleado no encontrado' });
+  return response.json(audit);
 }
 
 export async function getById(request, response) {

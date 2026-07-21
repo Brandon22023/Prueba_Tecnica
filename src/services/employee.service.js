@@ -4,11 +4,13 @@ import {
   findById,
   insert,
   update,
-  deactivate
+  deactivate,
+  findAuditByEmployee
 } from '../repositories/employee.repository.js';
 import {
   validateCreateEmployee,
-  validateUpdateEmployee
+  validateUpdateEmployee,
+  validateEmployeeDates
 } from '../models/employee.model.js';
 
 function auditUser(value) {
@@ -20,8 +22,8 @@ async function setAuditUser(connection, user) {
   await connection.execute('SET @usuario_app = ?', [auditUser(user)]);
 }
 
-export function listEmployees() {
-  return findAll(pool);
+export function listEmployees(filters) {
+  return findAll(pool, filters);
 }
 
 export function getEmployee(id) {
@@ -66,6 +68,8 @@ export async function updateEmployee(id, data, user) {
       direccion: patch.direccion ?? current.DIRECCION
     };
 
+    validateEmployeeDates(employee);
+
     await connection.beginTransaction();
     await setAuditUser(connection, user);
     const updated = await update(connection, id, employee);
@@ -77,6 +81,12 @@ export async function updateEmployee(id, data, user) {
   } finally {
     connection.release();
   }
+}
+
+export async function getEmployeeAudit(id) {
+  const employee = await findById(pool, id);
+  if (!employee) return null;
+  return findAuditByEmployee(pool, id);
 }
 
 export async function deactivateEmployee(id, user) {
