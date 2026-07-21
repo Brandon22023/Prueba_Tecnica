@@ -4,11 +4,8 @@ services:
     container_name: mysql_db
     restart: unless-stopped
     command: ["--default-time-zone=-06:00"]
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: tecnica
-      MYSQL_USER: usuario
-      MYSQL_PASSWORD: tecnica123
+    env_file:
+      - .env
     ports:
       - "3307:3306"
     volumes:
@@ -29,13 +26,8 @@ services:
       dockerfile: Dockerfile
     container_name: backend_api
     restart: unless-stopped
-    environment:
-      PORT: 3000
-      DB_HOST: mysql
-      DB_PORT: 3306
-      DB_USER: usuario
-      DB_PASSWORD: tecnica123
-      DB_NAME: tecnica
+    env_file:
+      - .env
     depends_on:
       mysql:
         condition: service_healthy
