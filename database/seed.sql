@@ -249,13 +249,19 @@ VALUES
 (19,2,'2023-03-01',NULL,'Capacitacion'),
 
 (20,8,'2018-01-15',NULL,'Contabilidad'),
-
-(21,5,'2020-02-20','2022-06-30','Desarrollo web'),
-(21,6,'2022-07-01',NULL,'Bases de datos'),
+(21,6,'2022-07-01','2024-07-31','Ingreso inicial'),
+(21,5,'2024-08-01','2024-12-31','Cambio a Desarrollo Web'),
+(21,6,'2025-01-01','2025-05-31','Cambio a Bases de Datos'),
+(21,7,'2025-06-01','2025-10-31','Cambio a Mesa de Ayuda'),
+(21,3,'2025-11-01',NULL,'Cambio a Contrataciones'),
 
 (22,3,'2022-09-09',NULL,'Administracion'),
 
-(23,5,'2019-03-03',NULL,'Desarrollo'),
+(23,5,'2019-03-03','2024-08-31','Ingreso inicial'),
+(23,1,'2024-09-01','2025-01-31','Cambio a Nomina'),
+(23,2,'2025-02-01','2025-05-31','Cambio a Capacitacion'),
+(23,3,'2025-06-01','2025-10-31','Cambio a Contrataciones'),
+(23,4,'2025-11-01',NULL,'Cambio a Desarrollo Web'),
 
 (24,1,'2023-04-04',NULL,'RRHH'),
 
