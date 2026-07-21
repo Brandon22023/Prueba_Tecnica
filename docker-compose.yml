@@ -3,6 +3,7 @@ services:
     image: mysql:9.7
     container_name: mysql_db
     restart: unless-stopped
+    command: ["--default-time-zone=-06:00"]
     env_file:
       - .env
     ports:

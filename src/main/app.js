@@ -21,6 +21,10 @@ app.use((error, _request, response, _next) => {
     return response.status(409).json({ message: 'DPI o correo ya registrado' });
   }
 
+  if (error.code === 'ER_NO_REFERENCED_ROW_2') {
+    return response.status(400).json({ message: 'La referencia enviada no existe' });
+  }
+
   console.error(error);
   return response.status(error.statusCode ?? 500).json({ message: 'Error interno del servidor' });
 });
