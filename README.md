@@ -129,6 +129,48 @@ ALGUNAS CONSULTAS
 
 ![alt text](img/image-11.png)
 
+-- •	Promedio salarial por departamento y mes considerando únicamente empleados activos.
+
+![alt text](img/image12.png)
+
+    
+-- •	Detectar empleados con más de tres cambios de departamento en los últimos 24 meses.
+
+![alt text](img/image13.png)
+
+-- •	Implementar una función en SQL o en el lenguaje seleccionado que realice un Forward Fill del salario utilizando el último salario conocido cuando existan valores nulos.
+
+![alt text](img/image14.png)
+
+
+
+# otras consultas
+-- •	Empleados activos con los salarios más altos.
+
+![alt text](img/image15.png)
+
+-- •	Listado de empleados
+    -- o	Ordenar por
+    -- 	Apellidos DESC 
+    -- 	Nombres ASC 
+
+![alt text](img/image16.png)
+
+-- •	Listado de empleados por departamento.
+
+![alt text](img/image17.png)
+
+-- •	Promedio salarial de los últimos doce meses para los empleados con menor salario actual.
+
+![alt text](img/image18.png)
+
+-- •	Mostrar
+    -- o	Departamento 
+    -- o	Jefe del departamento 
+    -- o	Empleados pertenecientes 
+
+![alt text](img/image19.png)
+
 
 ## Decisiones de diseno
 
