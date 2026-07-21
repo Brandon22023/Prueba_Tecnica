@@ -8,14 +8,14 @@ Este proyecto implementa el módulo de gestión de empleados mediante una arquit
 
 ## Tecnologias utilizadas
 
-- Node.js 20
-- Express 5
-- MySQL 9
-- mysql2
-- dotenv
-- Docker y Docker Compose
-- Node Test Runner para pruebas unitarias
-- GitHub Actions para integracion continua
+- Node.js 20: entorno de ejecución principal para el backend y el arranque del servidor desde `src/main/server.js`.
+- Express 5: framework utilizado para construir la API REST, definir rutas y manejar middlewares.
+- MySQL 9: motor de base de datos relacional donde se almacenan los datos de empleados y la auditoría.
+- mysql2: cliente de MySQL utilizado por la capa de conexión y repositorios para ejecutar consultas.
+- dotenv: carga de variables de entorno desde el archivo `.env` para la configuración de la aplicación y Docker.
+- Docker y Docker Compose: permiten levantar de forma reproducible el entorno completo con MySQL y el backend.
+- Node Test Runner: se usa para ejecutar las pruebas unitarias del módulo de empleados.
+- GitHub Actions: automatiza la ejecución de pruebas en cada push a la rama `main`.
 
 ## Requisitos
 
