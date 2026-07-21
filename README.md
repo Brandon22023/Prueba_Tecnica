@@ -132,7 +132,7 @@ ALGUNAS CONSULTAS
 
 ## Decisiones de diseno
 
-- Se uso una arquitectura en capas para separar controladores, servicios, repositorios y modelos.
+- El proyecto sigue una arquitectura monolítica organizada por capas, donde toda la aplicación se ejecuta como una sola pieza, pero su código está dividido por responsabilidades en controladores, servicios, repositorios y modelos.
 - El modelo de datos fue normalizado hasta Tercera Forma Normal (3FN) para evitar redundancia y mantener la integridad de la información.
 - Se creó una tabla movimientos_empleados para facilitar las consultas solicitadas en la prueba técnica relacionadas con movimientos laborales.
 - Docker Compose levanta tanto MySQL como el backend para evitar configuracion manual adicional.
