@@ -1,5 +1,6 @@
 import { Router } from 'express';
 import {
+  createEmployeeController,
   list,
   getById,
   auditById,
@@ -8,13 +9,19 @@ import {
   deactivateById
 } from '../controllers/employee.controller.js';
 
-const router = Router();
+export function createEmployeeRouter(controller = createEmployeeController()) {
+  const router = Router();
 
-router.get('/', list);
-router.get('/:id/auditoria', auditById);
-router.get('/:id', getById);
-router.post('/', create);
-router.put('/:id', updateById);
-router.patch('/:id/baja', deactivateById);
+  router.get('/', controller.list ?? list);
+  router.get('/:id/auditoria', controller.auditById ?? auditById);
+  router.get('/:id', controller.getById ?? getById);
+  router.post('/', controller.create ?? create);
+  router.put('/:id', controller.updateById ?? updateById);
+  router.patch('/:id/baja', controller.deactivateById ?? deactivateById);
+
+  return router;
+}
+
+const router = createEmployeeRouter();
 
 export default router;
